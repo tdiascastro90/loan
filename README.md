@@ -12,8 +12,7 @@ Esta é uma API REST para simulação de empréstimos. A API permite calcular va
 
 ### 1. Clone o repositório
 ```bash
-git clone <URL_DO_REPOSITORIO>
-cd <NOME_DO_DIRETORIO>
+git clone https://github.com/tdiascastro90/loan.git
 ```
 
 ### 2. Compilar e construir o projeto
