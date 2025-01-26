@@ -18,13 +18,13 @@ git clone https://github.com/tdiascastro90/loan.git
 ### 2. Compilar e construir o projeto
 Certifique-se de que o Maven está instalado corretamente e execute o seguinte comando:
 ```bash
-mvn clean install
+mvn clean package
 ```
 
 ### 3. Executar a aplicação
 Para iniciar a aplicação localmente:
 ```bash
-mvn spring-boot:run
+docker-compose up --build
 ```
 
 A aplicação será iniciada no endereço padrão:
