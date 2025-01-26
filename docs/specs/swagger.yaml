@@ -1,0 +1,81 @@
+openapi: 3.0.0
+info:
+  title: Loan Simulation API
+  description: API para simulação de empréstimos, permitindo calcular valores como o total a ser pago, parcelas mensais e juros totais.
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+    description: Servidor local
+paths:
+  /api/loan/simulate:
+    post:
+      summary: Simular cálculo de empréstimos
+      description: Calcula o total a ser pago, parcelas mensais e juros totais com base nas informações fornecidas.
+      requestBody:
+        description: Lista de requisições de simulação de empréstimos
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/LoanSimulationRequest'
+      responses:
+        '200':
+          description: Resultado da simulação de empréstimos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LoanSimulationResponse'
+        '400':
+          description: Erro de validação na requisição
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '500':
+          description: Erro interno no servidor
+components:
+  schemas:
+    LoanSimulationRequest:
+      type: object
+      properties:
+        amount:
+          type: number
+          format: double
+          description: Valor do empréstimo (deve ser maior que 0).
+        birthDate:
+          type: string
+          format: date
+          description: Data de nascimento no formato yyyy-MM-dd.
+        period:
+          type: integer
+          description: Prazo de pagamento em meses (deve ser maior que 0).
+      required:
+        - amount
+        - birthDate
+        - period
+    LoanSimulationResponse:
+      type: object
+      properties:
+        totalPayment:
+          type: number
+          format: double
+          description: Total a ser pago pelo empréstimo.
+        monthlyPayment:
+          type: number
+          format: double
+          description: Valor da parcela mensal.
+        totalInterest:
+          type: number
+          format: double
+          description: Total de juros pagos no empréstimo.
+      required:
+        - totalPayment
+        - monthlyPayment
+        - totalInterest
