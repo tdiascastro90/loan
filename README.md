@@ -2,11 +2,22 @@
 
 Esta é uma API REST para simulação de empréstimos. A API permite calcular valores como o total a ser pago, parcelas mensais e juros totais, com base nos dados fornecidos.
 
-## Pré-requisitos
+## Tecnologias Utilizadas
 
 - **Java 17** ou superior
 - **Maven** (para gerenciamento de dependências e build)
 - **Spring Boot**
+- **Kafka**
+- **Docker e Docker Compose**
+- **Springdoc OpenAPI (Swagger UI)**
+- **JUnit 5**
+- **RestAssured**
+- **Mockito**
+- **SLF4J** para logs
+
+## Pré-requisitos
+
+- **Docker** instalado no sistema.
 
 ## Configuração
 
@@ -103,6 +114,12 @@ Se ocorrerem erros na validação, a API retornará:
 Os testes foram implementados utilizando **JUnit** e **RestAssured**. Para executar os testes, use o comando:
 ```bash
 mvn test
+```
+
+## Encerrando a aplicação
+Para encerrar os contêineres Docker, execute:
+```bash
+docker-compose down
 ```
 
 Os testes incluem:
