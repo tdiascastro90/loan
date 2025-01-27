@@ -160,20 +160,6 @@ Os testes incluem:
 ### Conclusão
 Kafka foi escolhido por ser altamente escalável, confiável, e pela facilidade de gerenciamento de tópicos e consumidores, tornando-o ideal para sistemas distribuídos de alta performance.
 
-
-## Tecnologias Utilizadas
-
-- **Java 17**
-- **Spring Boot**
-- **Maven**
-- **JUnit 5**
-- **RestAssured**
-- **Kafka**
-- **SLF4J** para logging
-- **Springdoc OpenAPI** (Swagger UI)
-- **Mockito** para testes mockados
-- **Docker e Docker Compose** para conteinerização
-
 ## Autor
 Thiago Dias de Castro - tdiascastro90@gmail.com
 
